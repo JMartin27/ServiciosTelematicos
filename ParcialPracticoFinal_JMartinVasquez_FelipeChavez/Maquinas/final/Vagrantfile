@@ -1,0 +1,9 @@
+Vagrant.configure("2") do |config|
+  # Configuración de la máquina virtual
+  config.vm.define "serviciofinal" do |final|
+    final.vm.box = "bento/ubuntu-22.04"
+
+ # Reenvío de puerto para Prometheus
+    final.vm.network "forwarded_port", guest: 9090, host: 9090
+  end
+end
